@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+// Helper: Draw top/bottom border
+void draw_border_line(char corner_char, char horizontal_char, int width) {
+    printf("%c", corner_char);
+    for (int i = 0; i < width - 2; i++) {
+        printf("%c", horizontal_char);
+    }
+    printf("%c\n", corner_char);
+}
+
+// Helper: Draw sides
+void draw_middle_lines(char vertical_char, int width, int height) {
+    for (int i = 0; i < height - 2; i++) {
+        printf("%c", vertical_char);
+        for (int j = 0; j < width - 2; j++) {
+            printf(" ");
+        }
+        printf("%c\n", vertical_char);
+    }
+}
+
+// Main box drawing function
+void draw_ascii_box(char horizontal_char, char vertical_char, char corner_char, int width, int height) {
+    if (width < 2 || height < 2) {
+        printf("Box must be at least 2x2.\n");
+        return;
+    }
+
+    draw_border_line(corner_char, horizontal_char, width);
+    draw_middle_lines(vertical_char, width, height);
+    draw_border_line(corner_char, horizontal_char, width);
+}
+
+int main() {
+    char horizontal, vertical, corner;
+    int width, height;
+
+    scanf(" %c", &horizontal);
+    scanf(" %c", &vertical);
+    scanf(" %c", &corner);
+    scanf("%d", &width);
+    scanf("%d", &height);
+
+    draw_ascii_box(horizontal, vertical, corner, width, height);
+
+    return 0;
+}
