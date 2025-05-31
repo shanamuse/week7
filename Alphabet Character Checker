@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+// Function to check if the character is an alphabet letter
+int is_letter(char c) {
+    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int main() {
+    char input;
+    int result;
+
+    // Prompt user for input
+    printf("Enter a character:\n");
+    scanf(" %c", &input);  // Notice the space before %c to consume any previous newline
+
+    // Call is_letter function
+    result = is_letter(input);
+
+    // Display the result
+    printf("Is it a letter: %d\n", result);
+
+    return 0;
+}
