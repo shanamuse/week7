@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+void draw_triangle(int height);
+void draw_top(int height);
+void draw_base(int height);
+
+int main(void) {
+    int height;
+
+    printf("enter height:\n");
+    scanf("%d", &height);
+
+    if (height < 1) {
+        return 0;
+    }
+
+    draw_triangle(height);
+
+    return 0;
+}
+
+// Draw the full triangle
+void draw_triangle(int height) {
+    draw_top(height);
+    draw_base(height);
+}
+
+// Draw the sloped sides of the triangle
+void draw_top(int height) {
+    for (int i = 0; i < height - 1; i++) {
+        for (int j = 0; j < height - i - 1; j++) {
+            printf(" ");
+        }
+        printf("/");
+        for (int j = 0; j < 2 * i; j++) {
+            printf(" ");
+        }
+        printf("\\\n");
+    }
+}
+
+void draw_base(int height) {
+    printf("/");
+    for (int i = 0; i < (height - 1) * 2; i++) {
+        printf("_");
+    }
+    printf("\\\n");
+}
