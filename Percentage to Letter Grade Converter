@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+char convert_percent_to_grade(float percentage) {
+    if (percentage >= 80.0) {
+        return 'A';
+    } else if (percentage >= 65.0) {
+        return 'B';
+    } else if (percentage >= 50.0) {
+        return 'C';
+    } else {
+        return 'D';
+    }
+}
+
+int main() {
+    float percentage;
+    char grade;
+
+    printf("What's the percentage:\n");
+    scanf("%f", &percentage);
+
+    grade = convert_percent_to_grade(percentage);
+
+    printf("%.2f%% is %c Grade\n", percentage, grade);
+
+    return 0;
+}
