@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+char to_lowercase(char letter) {
+    if (letter >= 'A' && letter <= 'Z') {
+        return letter + ('a' - 'A');
+    } else {
+        return '\0';  
+    }
+}
+
+int main(void) {
+    char input;
+    char result;
+
+    printf("Please input a letter:\n");
+    scanf(" %c", &input);  
+
+    result = to_lowercase(input);
+
+    if (result != '\0') {
+        printf("%c's lowercase is %c\n", input, result);
+    } else {
+        printf("%c's lowercase is \\x00\n", input);
+    }
+
+    return 0;
+}
