@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int is_hex_digit(char c) {
+    if ((c >= '0' && c <= '9') || 
+        (c >= 'A' && c <= 'F') || 
+        (c >= 'a' && c <= 'f')) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int main() {
+    char input;
+    int result;
+
+    printf("Enter:\n");
+    scanf(" %c", &input);  
+    
+    result = is_hex_digit(input);
+
+    printf("Is it a hex digit: %d\n", result);
+
+    return 0;
+}
