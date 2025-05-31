@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+void print_ascii_rectangle(char symbol, int width, int height) {
+    
+    for (int row = 0; row < height; row++) {
+        for (int col = 0; col < width; col++) {
+            printf("%c", symbol);
+        }
+        printf("\n"); 
+    }
+}
+
+int main() {
+    char symbol;
+    int width, height;
+
+    printf("Please enter an ASCII symbol:\n");
+    scanf(" %c", &symbol); 
+
+    printf("Please enter the width:\n");
+    scanf("%d", &width);
+
+    printf("Please enter the height:\n");
+    scanf("%d", &height);
+
+    print_ascii_rectangle(symbol, width, height);
+
+    return 0;
+}
