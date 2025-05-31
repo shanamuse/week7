@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+// Function to print the top of the box
+void print_top() {
+    printf("/\\/\\/\\/\\/\\\n");
+}
+
+// Function to print the bottom of the box
+void print_bottom() {
+    printf("\\/\\/\\/\\/\\/\n");
+}
+
+// Function to print the middle lines
+void print_middle(int how_many) {
+    for (int i = 0; i < how_many; i++) {
+        printf("\\        /\n");
+        printf("/        \\\n");
+    }
+}
+
+int main() {
+    int how_many;
+
+    // Prompt the user
+    printf("How many middle parts?\n");
+    scanf("%d", &how_many);
+
+    // Print the decorative box
+    print_top();
+    print_middle(how_many);
+    print_bottom();
+
+    return 0;
+}
