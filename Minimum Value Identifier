@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int identify_minimum_value(int a, int b) {
+    if (a < b) {
+        return a;
+    } else {
+        return b;
+    }
+}
+
+int main() {
+    int num1, num2, minimum_value;
+
+    printf("Please input number 1:\n");
+    scanf("%d", &num1);
+
+    printf("Please input number 2:\n");
+    scanf("%d", &num2);
+
+    minimum_value = identify_minimum_value(num1, num2);
+
+    printf("The minimum number of %d and %d is %d\n", num1, num2, minimum_value);
+
+    return 0;
+}
